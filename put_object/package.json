@@ -1,0 +1,23 @@
+{
+  "name": "put_object",
+  "version": "1.0.0",
+  "main": "put.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.577.0",
+    "@aws-sdk/credential-providers": "^3.577.0",
+    "@aws-sdk/s3-request-presigner": "^3.577.0",
+    "@aws-sdk/util-format-url": "^3.577.0",
+    "@smithy/hash-node": "^3.0.0",
+    "@smithy/protocol-http": "^4.0.0",
+    "@smithy/url-parser": "^3.0.0",
+    "url": "^0.11.3"
+  }
+}
