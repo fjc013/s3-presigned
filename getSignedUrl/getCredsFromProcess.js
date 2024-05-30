@@ -1,25 +1,25 @@
+/**
+ * Produce an s3 pre-signed after obtaining temporary credentials
+ * from the IAM Roles Anywhere service
+ * The fromProcess() method is used to obtain temporary credentials
+ * from the IAM Roles Anywhere service by referencing a predefined role within
+ * the aws config file.
+ * The profile invokes the AWS code, aws-signing-helper passing the 
+ * Trust anchor arn, role arn, profile arn, client cert, and client key 
+ * The credentials are then used to create an S3 client object.
+ */
+
 import { S3Client, GetObjectCommand } from '@aws-sdk/client-s3';
 import { fromProcess } from '@aws-sdk/credential-providers';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
-import * as fs from 'fs';
-// import * as path from 'path';
 
-
-// Define the required values
-// const trustAnchorArn = 'arn:aws:rolesanywhere:us-east-2:314940726554:trust-anchor/e0634358-ce5b-45ea-9273-218a5f82291b';
-// const profileArn = 'arn:aws:rolesanywhere:us-east-2:314940726554:profile/da4a4409-0d30-475a-b620-89b8c94e5b37';
-// const roleArn = 'arn:aws:iam::314940726554:role/agencymobiledatasandbox';
-// const certPemPath = '../crypto/client.pem';
-// const keyPemPath = '../crypto/client.key';
 const region = 'us-east-2';
 
-// Load the certificate and private key from files
-// const certPem = fs.readFileSync(certPemPath, 'utf8');
-// const keyPem = fs.readFileSync(keyPemPath, 'utf8');
-
-// console.log(certPem);
-// console.log(keyPem);
-// Create an S3 client with the IAM Role Anywhere credentials
+/**
+ * Create an S3 client authorized with the IAM Role Anywhere credentials
+ * @param {string} region The AWS region to use
+ * @param {string} profile The credentials to use within the config file
+ */
 const s3Client = new S3Client({
   region: region,
   credentials: fromProcess({
@@ -29,7 +29,10 @@ const s3Client = new S3Client({
   })
 });
 
-// Generate a pre-signed URL for the object "applause.png"
+/**
+ * Generate a pre-signed URL for the object "applause.png"
+ * within the "gp2togp3-backend-aws-bucket" bucket
+ */
 const bucketName = 'gp2togp3-backend-aws-bucket';
 const objectKey = 'photos/helena_lopes_h1111.jpg';
 const expiresInSeconds = 604800; // Maximum allowed expiration (7 days)
