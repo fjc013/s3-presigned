@@ -1,0 +1,14 @@
+{
+    "name": "your-project-name",
+    "version": "1.0.0",
+    "type": "module",
+    "dependencies": {
+      "@aws-sdk/client-sts": "^3.x.x",
+      "@aws-sdk/credential-providers": "^3.x.x",
+      "@aws-sdk/signature-v4": "^3.x.x",
+      "@aws-sdk/smithy-client": "^3.x.x",
+      "@aws-sdk/s3-request-presigner": "^3.x.x",
+      "@aws-sdk/client-s3": "^3.x.x"
+    }
+  }
+  
