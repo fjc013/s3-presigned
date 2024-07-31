@@ -11,8 +11,8 @@
   "type": "module",
   "description": "",
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.577.0",
-    "@aws-sdk/credential-providers": "^3.577.0",
+    "@aws-sdk/client-s3": "^3.621.0",
+    "@aws-sdk/credential-providers": "^3.621.0",
     "@aws-sdk/s3-request-presigner": "^3.577.0",
     "@aws-sdk/util-format-url": "^3.577.0",
     "@smithy/hash-node": "^3.0.0",
